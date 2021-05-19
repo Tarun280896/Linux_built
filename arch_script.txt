@@ -1,0 +1,32 @@
+pacman -Sy
+
+pacman -S git curl wget
+
+git clone https://github.com/Tarun280896/ArchMatic
+
+cd ArchMatic
+
+./preinstall.sh
+./0-setup.sh
+./1-base.sh
+./2-software-pacman.sh
+./3-software-aur.sh
+./9-post-setup.sh
+
+#mounting drives
+mount /dev/sda2 /mnt
+mount /dev/sda1 /mnt/boot
+arch-chroot /mnt
+
+#to set password ->> mount into arch-chroot /mnt using flash drive
+passwd
+
+#need to install networkmanager
+pacman -S networkmanager dhclient
+
+#and enable it 
+systemctl enable NetworkManager
+
+
+#to change user password
+passwd --root MOUNT_POINT USER_NAME
