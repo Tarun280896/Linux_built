@@ -7,10 +7,16 @@ git clone https://github.com/Tarun280896/ArchMatic
 cd ArchMatic
 
 ./preinstall.sh
+#check# bootctl install 
+#check the arch.conf file in /boot/loader/entries/arch.conf
+#to get option root = ->>> need to be in vim arch.conf in read mode ":r !blkid " # can grep /dev/sda2 UUID 
+
 reboot
 ./0-setup.sh
 ./1-base.sh
 ./2-software-pacman.sh
+# next create user 
+useradd -m -G users,wheel -s /bin/bash username #example tarun
 ./3-software-aur.sh
 ./9-post-setup.sh
 
