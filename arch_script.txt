@@ -37,3 +37,9 @@ systemctl enable NetworkManager
 
 #to change user password
 passwd --root MOUNT_POINT USER_NAME
+
+
+#configure HDMI out --> check xrandr output then -->
+xrandr --output HDMI-0 --auto
+#to turn off main screen display
+xrandr --output eDP --off
