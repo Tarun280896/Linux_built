@@ -7,6 +7,7 @@ git clone https://github.com/Tarun280896/ArchMatic
 cd ArchMatic
 
 ./preinstall.sh
+reboot
 ./0-setup.sh
 ./1-base.sh
 ./2-software-pacman.sh
