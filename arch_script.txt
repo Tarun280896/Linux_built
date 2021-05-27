@@ -11,6 +11,12 @@ cd ArchMatic
 #check the arch.conf file in /boot/loader/entries/arch.conf
 #to get option root = ->>> need to be in vim arch.conf in read mode ":r !blkid " # can grep /dev/sda2 UUID 
 
+#need to install networkmanager
+pacman -S networkmanager dhclient
+
+#and enable it 
+systemctl enable NetworkManager
+
 reboot
 ./0-setup.sh
 ./1-base.sh
@@ -28,11 +34,7 @@ arch-chroot /mnt
 #to set password ->> mount into arch-chroot /mnt using flash drive
 passwd
 
-#need to install networkmanager
-pacman -S networkmanager dhclient
 
-#and enable it 
-systemctl enable NetworkManager
 
 
 #to change user password
