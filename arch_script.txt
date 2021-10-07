@@ -1,3 +1,5 @@
+##https://www.youtube.com/watch?v=pt_4qbJ-5-o&t=4119s
+
 pacman -Sy
 
 pacman -S git curl wget
